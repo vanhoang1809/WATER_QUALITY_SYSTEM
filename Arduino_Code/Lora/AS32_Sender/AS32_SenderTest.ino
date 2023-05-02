@@ -19,8 +19,8 @@ byte msgCount = 0;            // count of outgoing messages
 byte MasterNode = 0xFF;
 byte Node2 = 0xCC;
 
-float humidity;
-float temperature;
+int humidity;
+int temperature;
 
 String MyMessage = "";
 String MessSender = "";
@@ -34,8 +34,8 @@ void setup() {
 }
  
 void loop(){
-    humidity = dht.readHumidity();
-    temperature = dht.readTemperature();
+    humidity = random(1,10);
+    temperature = random(10, 20);
     // read packet header bytes:
     byte sender = loraSerial.read();
     int recipient = loraSerial.read();          // recipient address
